@@ -27,5 +27,5 @@ Feel free to explore the solutions, provide feedback, or suggest improvements.
 
 Let's connect! Feel free to reach out for discussions, questions, or collaborations.
 
-- [LinkedIn]([your_linkedin_profile](https://www.linkedin.com/in/felipe-vital-cacique-70b04011a/?locale=en_US)https://www.linkedin.com/in/felipe-vital-cacique-70b04011a/?locale=en_US)
+- [LinkedIn](https://www.linkedin.com/in/felipe-vital-cacique-70b04011a/?locale=en_US)
 - [Email](felipecacique2@hotmail.com)
