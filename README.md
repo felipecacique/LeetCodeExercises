@@ -89,7 +89,7 @@ Feel free to explore the solutions, provide feedback, or suggest improvements.
 - [x] word-break
 - [x] word-search
 
-## Hard problems
+### Hard problems
 
 - [x] minimum-window-substring
 - [x] serialize-and-deserialize-binary-tree
