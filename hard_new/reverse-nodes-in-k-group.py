@@ -7,7 +7,7 @@ class Solution:
     def reverseKGroup(self, head: Optional[ListNode], k: int) -> Optional[ListNode]:
         # https://leetcode.com/problems/reverse-nodes-in-k-group/?envType=study-plan-v2&envId=top-interview-150
 
-        def Solution1(): # works correctly, but it is too long, complicated and is slow ...
+        def Solution1(head,k): # works correctly, but it is too long, complicated and is slow ...
             if k == 1:
                 return head
 
@@ -84,10 +84,26 @@ class Solution:
 
             return head_.next
         
-        def solution2():
+        def ReverseKGroup(head,k):
             # from https://www.youtube.com/watch?v=1UOPsfP85V4&ab_channel=NeetCode
+            # actually the solution bellow is based on a solution from the submitions. I undertood and rewrited without looking at it. Very intesresting solution
+            
+            curr = head
+            for _ in range(k):
+                if not curr:
+                    return head
+                curr = curr.next
+                
+            curr = head
+            pre = None
+            for _ in range(k):
+                nex = curr.next
+                curr.next = pre
+                pre = curr
+                curr = nex
+            
+            head.next = ReverseKGroup(curr,k)
+            return pre
 
-            pass
-
-        return Solution1()
+        return ReverseKGroup(head,k)
         
