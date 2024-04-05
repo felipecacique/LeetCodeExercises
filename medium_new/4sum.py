@@ -1,6 +1,6 @@
 class Solution:
     def fourSum(self, nums: List[int], target: int) -> List[List[int]]:
-        
+        # https://leetcode.com/problems/4sum/?source=submission-noac
         def Solution1(nums,target):
             # brute solution is O(n^4). Our solution will be O(n^3). We will do brute force untill we reach two numbers, then use twoSum approach to solve for these last 2 numbers
             def twoSumIndex(nums,target,start):
@@ -45,7 +45,7 @@ class Solution:
 
         def Solution2(nums,target):
             # great solution!
-            # O(n^4) in the worse situation (duplicates but we have already solve it) or O(n^2)??
+            # O(n^4) in the worse situation (duplicates but we have already solve it) or O(n^3)??
             nums = sorted(nums) # help us to remove duplicates
             output = set()
             dp = {}
