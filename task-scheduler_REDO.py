@@ -105,7 +105,29 @@ class Solution:
 
             return global_clock # just add 1 because for the answer the have to count from 1 instead of from 0 
 
-        # def Solution3(): # a solution from Submissions
+
+        def Solution3():
+            # got ftom neetcode youtube https://www.youtube.com/watch?v=s8p8ukTyA2I&t=6s
+            # each  task 1 unit time
+            # minimize idle time
+            from collections import Counter, deque
+            count = Counter(tasks)
+            maxHeap = [-cnt for cnt in count.values()]
+            heapq.heapify(maxHeap)
+
+            time = 0
+            q = deque() # pairs of [-cnt, idleTime]
+            while maxHeap or q:
+                time += 1
+                if maxHeap:
+                    cnt = 1 + heapq.heappop(maxHeap)
+                    if cnt:
+                        q.append([cnt, time + n])
+                if q and q[0][1] == time:
+                    heapq.heappush(maxHeap, q.popleft()[0])
+            return time
+
+        # def Solution4(): # a solution from Submissions
         #     from collections import defaultdict
         #     counts = defaultdict(int)
         #     heap = []
