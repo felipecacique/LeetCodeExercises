@@ -17,13 +17,16 @@ class Solution:
         node = head
         while node:
             if node.val < x:
-                node_left.next = ListNode(node.val)
+                # node_left.next = ListNode(node.val)
+                node_left.next = node
                 node_left = node_left.next
             else:
-                node_right.next = ListNode(node.val)
+                # node_right.next = ListNode(node.val)
+                node_right.next = node
                 node_right = node_right.next
             node = node.next
         
+        node_right.next = None
         node_left.next = dummy_right.next
         return dummy_left.next
         
