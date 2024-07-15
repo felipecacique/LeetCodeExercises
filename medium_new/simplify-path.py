@@ -20,5 +20,3 @@ class Solution:
         #     output += folder + "/"
         
         # output[:-1] if len(output[:-1]) > 0 else "/"
-
-            
