@@ -3,6 +3,11 @@ class Solution:
         # https://leetcode.com/problems/bitwise-and-of-numbers-range/?envType=study-plan-v2&envId=top-interview-150
         # there is a rule for find out if the x-th bit of an interval bitwise is 0 or 1. 
 
+        # this is an optimal solution from the submissions. It is simple but complex. I have solved it in a diferent way.
+        # while left < right:
+        #     right &= right-1
+        # return right
+
         def solution1():
             output = 0
             for bit in range(31, -1, -1):
