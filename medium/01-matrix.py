@@ -49,3 +49,40 @@ class Solution:
             return distances
 
         return Solution2(mat)
+
+# I have REDO this question, see bellow
+# class Solution:
+#     def updateMatrix(self, mat: List[List[int]]) -> List[List[int]]:
+#         # we will do a bfs
+#         m = len(mat)
+#         n = len(mat[0])
+#         distMat = [ [0] * n for _ in range(m) ]
+#         from collections import deque
+#         queue = deque()
+#         seen = set()
+#         # Add the ones with surrounding 0s to the queue
+#         for j in range(m):
+#             for i in range(n):
+#                 if mat[j][i] == 1 and 0 in [mat[j][min(i+1,n-1)], mat[j][max(i-1,0)], mat[min(j+1,m-1)][i], mat[max(j-1,0)][i]]:
+#                     queue.append((j, i, 1))
+#                     seen.add((j, i))
+
+        
+#         while queue:
+#             j, i, dist = queue.popleft()
+#             distMat[j][i] = dist
+            
+#             if i-1 >= 0 and mat[j][i-1] == 1 and (j, i-1) not in seen:
+#                 queue.append((j, i-1, dist+1))
+#                 seen.add((j, i-1))
+#             if i+1 < n and mat[j][i+1] == 1 and (j, i+1) not in seen:
+#                 queue.append((j, i+1, dist+1))
+#                 seen.add((j, i+1))
+#             if j-1 >= 0 and mat[j-1][i] == 1 and (j-1, i) not in seen:
+#                 queue.append((j-1, i, dist+1))
+#                 seen.add((j-1, i))
+#             if j+1 < m and mat[j+1][i] == 1 and (j+1, i) not in seen:
+#                 queue.append((j+1, i, dist+1))
+#                 seen.add((j+1, i))
+        
+#         return distMat
