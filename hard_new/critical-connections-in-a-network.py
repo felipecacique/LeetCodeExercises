@@ -1,11 +1,10 @@
 class Solution:
     def criticalConnections(self, n: int, connections: List[List[int]]) -> List[List[int]]:
-        # do a dfs, using every connection just once, try to visit all the nodese twice. 
-        # if the noce can by reached though 2 different ways, then ok. If not, it means that there is only one path ot it, and cannot be reached. 
-        # if we use the path twice i nthe same direction, lets say [ai, bi] and [ai, bi] as we do a dfs, then there is a cycle that leads to that path. It is not allowed to traverse the path in a reverse order
-        
-        # if [a,b] is not part of a cycle path, it is a critical connection. Lets find cycles, as we find we return true and add all the conections in post order to an array
+        # https://leetcode.com/problems/critical-connections-in-a-network/
+        # If [a,b] is not part of a cycle path, it is a critical connection. Lets find cycles (a repeated node and save it to a cycleHeads), as we find it we return true and add all the conections in post order to a set (or just remove it from our output connections). When we find the node of the cycleHeads in post order, it means that the cycle has finished, then we stop adding the paths to our cycleNodes. Notice that there mmight be more than one node in the cycleHeads, so the node will still be inside a cycle path if threr is still a node in the cycleHeads.
         # time/space: O(n)
+        # the problem seems easy at first, but it is very complicated to solve it/ implement it
+
         from collections import defaultdict
         adj = defaultdict(list)
         for c in connections:
@@ -119,4 +118,4 @@ class Solution:
 #                 output.append([a,b])
 
 #         return output
-        
+         
