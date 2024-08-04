@@ -2,6 +2,7 @@ class Solution:
     def shortestDistanceAfterQueries(self, n: int, queries: List[List[int]]) -> List[int]:
         # https://leetcode.com/problems/shortest-distance-after-road-addition-queries-i/
         # do a bfs for evey query added to the graph
+        # O(query.len * (edges+nodes))
 
         from collections import defaultdict
         adj = defaultdict(list)
