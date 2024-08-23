@@ -7,6 +7,7 @@ class Solution:
         #     s.add(num)
         
         # got the solution from https://www.youtube.com/watch?v=_n5MR8IxR6c. The idea is finding the cycle in a linked list. But i didnt understand very well this technic
+        # o(N) space o(1)
         # Start a fast and slow pointer untill they meet
         slow, fast = nums[0], nums[nums[0]]
         while slow != fast:
