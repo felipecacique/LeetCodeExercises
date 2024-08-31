@@ -1,6 +1,5 @@
 class Solution:
     def permute(self, nums: List[int]) -> List[List[int]]:
-        # https://leetcode.com/problems/permutations/description/
         # Solution1: Iterative with lists. We will do all permutations adding all numbers to the first position, leading to an set of partial solutions. For each partial solution, we add all nums in the second position, and so on untill we have all permutation. We need to avoid adding the same number to the solution more than 1 time. For that we will keep for each partial solution also a set() with the numbers of the solution. This way will be faster to check if the new number that we are about to add is already there or not. time(n^n)
         def Solution1(nums):
             n = len(nums)
@@ -31,6 +30,21 @@ class Solution:
 
         def Solution2(nums):
             # recursive
-            pass
+            permutations = set()
+            def Permutations(perm, visited):
+                if len(perm) == len(nums):
+                    permutations.add(tuple(perm))
+                    return
 
+                for i in range(len(nums)):
+                    if not i in visited:
+                        perm.append(i)
+                        visited.add(i)
+                        Permutations(perm, visited)
+                        perm.pop()
+                        visited.remove(i)
+            Permutations([], set([]))
+
+            return [ [nums[i] for i in permutation] for permutation in permutations ]
+                
         return Solution1(nums)
