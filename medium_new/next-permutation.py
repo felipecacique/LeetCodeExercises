@@ -3,6 +3,7 @@ class Solution:
         """
         Do not return anything, modify nums in-place instead.
         """
+        # https://leetcode.com/problems/next-permutation/description/?envType=study-plan-v2&envId=top-100-liked
         # o(n) o(n)
         exchanged = False
         maxNum = nums[-1]
