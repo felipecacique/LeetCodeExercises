@@ -76,3 +76,20 @@ class Solution:
             return dp[n][target] 
         
         return Solution3()
+
+
+# class Solution:
+#     def numRollsToTarget(self, n: int, k: int, target: int) -> int:
+        
+#         MOD = 10**9 + 7
+        
+#         dp = [{} for _ in range(n+1)]
+#         dp[0][0] = 1
+#         for dice in range(1, n+1):
+#             for sum_, count in dp[dice-1].items():
+#                 for face in range(1, k+1):
+#                     if sum_ + face > target:
+#                         continue
+#                     dp[dice][sum_ + face] = (dp[dice].get(sum_ + face, 0) + count) % MOD
+
+#         return dp[n][target] if target in dp[n] else 0
